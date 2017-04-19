@@ -30,7 +30,10 @@ public class GestorLEEquitativo implements Gestor {
 		}
 		nLectoresEsperando--;
 		bloqueoLector = true;
+
+		assert nLectores >= 0 && !bloqueoEscritor;
 		nLectores++;
+
 		turnoEscritor = true;
 
 		System.out.println("L>>>> La hebra lectora " + idLector
